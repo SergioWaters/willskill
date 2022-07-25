@@ -1,0 +1,142 @@
+.main {
+
+  &__order {
+    background-color: $primeBGColor;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include font(400);
+
+    @media(max-width: 1100px) {
+      padding: 30px 10px 30px 10px;
+    }
+  }
+
+  &__order-header {
+    color: $primeTextColor;
+    @include adaptiv-font(48, 28, 1.5);
+    @include font(700);
+    text-transform: uppercase;
+    text-align: center;
+
+    & span {
+      color: $secondaryTextColor;
+      display: block;
+    }
+  }
+
+  &__order-price {
+    @include adaptiv-font(48, 40, 1.5);
+    color: $primeTextColor;
+    margin: 85px 0px 50px 0px;
+    display: flex;
+    align-items: center;
+
+    & span {
+      padding-left: 10px;
+
+    }
+
+    & span::after {
+      content: "\20BD";
+    }
+
+    & span:first-child,
+    span:first-child::after {
+      text-decoration: line-through;
+      @include adaptiv-font(36, 24, 1.5);
+      color: #adadad;
+    }
+  }
+
+  &__order_list {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+
+    @media(max-width: 1210px) {
+      flex-direction: column;
+    }
+
+    &_item {
+      // margin-top: 60px;
+      // display: flex;
+      // flex-direction: column;
+      // justify-content: center;
+      padding: 10px;
+      min-width: 260px;
+      min-height: 350px;
+      list-style: none;
+      @include adaptiv-font(18, 14, 1.5);
+      transition: .5s;
+
+      &:nth-child(2) {
+        min-height: 240px;
+        // @include adaptiv-font(36, 24, 1.5);
+      }
+
+      &-img {
+        height: 190px;
+        transition: .5s;
+      }
+
+      &-text {
+        color: $primeTextColor;
+        margin: 45px 0 8px 0;
+
+        @media(max-width: 1210px) {
+          margin: 15px 0 8px 0;
+        }
+      }
+
+      &-subtext {
+        color: $secondaryTextColor;
+      }
+
+      &:hover {
+        transform: scale(110%);
+        transition: .5s;
+      }
+
+      &:hover &-text {
+        transition: .5s;
+        @include adaptiv-font(36, 18, 1.5);
+      }
+
+      &:hover &-subtext {
+        transition: .5s;
+        @include adaptiv-font(24, 18, 1.5);
+
+      }
+
+      &:nth-child(2) &-img {
+        height: 190px;
+
+        @media(max-width: 1210px) {
+          width: 250px;
+          height: auto;
+        }
+      }
+    }
+  }
+
+  &__order-button {
+    &:hover {
+      background-color: $primeTextColor;
+      color: $secondaryTextColor;
+      transition: .5s;
+    }
+
+    &:active,
+    & {
+      background-color: $secondaryBGColor;
+      color: $additionalTextColor;
+      @include adaptiv-font(18, 14, 1.5);
+      margin: 65px 0px 112px 0px;
+      padding: 16px 32px;
+      border-radius: 7px;
+      width: 250px;
+      transition: .5s;
+    }
+  }
+}

@@ -1,0 +1,69 @@
+.main {
+
+  &__inner {
+    background: 0 -60px no-repeat url('../img/main/gradient_header_main.svg');
+  }
+
+  &__promo {
+    padding: 96px 0px 112px 64px;
+    text-align-last: left;
+    background:
+      0 -60px no-repeat url('../img/main/gradient_header_main.svg'),
+      110% 170% / auto 105% no-repeat url('../img/main/promo.png'),
+      linear-gradient(to bottom, $secondaryBGColor 85%, $primeBGColor 15%);
+
+    @media(max-width: 1100px) {
+      padding: 30px 25px 30px 25px;
+    }
+
+    @media(max-width: 580px) {
+      background:
+        0 -60px no-repeat url('../img/main/gradient_header_main.svg'),
+        linear-gradient(to bottom, $secondaryBGColor 85%, $primeBGColor 15%);
+    }
+  }
+
+  &__promo-header {
+    max-width: 1000px;
+    @include adaptiv-font(144, 40, 1.2);
+    @include font(700);
+    text-transform: uppercase;
+    color: $primeTextColor;
+    margin-bottom: 60px;
+  }
+
+  &__promo-text {
+    max-width: 655px;
+    @include adaptiv-font(24, 18, 1.5);
+    @include font(400);
+    color: $additionalTextColor;
+    margin-bottom: 120px;
+
+    @media(max-width: 800px) {
+      max-width: 420px;
+      margin-bottom: 60px;
+    }
+
+    @media(max-width: 650px) {
+      max-width: 320px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__promo-subheder {
+    max-width: 416px;
+    text-transform: uppercase;
+    @include adaptiv-font(36, 26, 1.5);
+    @include font(700);
+    color: $additionalTextColor;
+    margin-bottom: 20px;
+  }
+
+  &__promo-subtext {
+    max-width: 345px;
+    @include adaptiv-font(18, 14, 1.5);
+    @include font(400);
+    color: $additionalTextColor;
+    margin-bottom: 90px;
+  }
+}
